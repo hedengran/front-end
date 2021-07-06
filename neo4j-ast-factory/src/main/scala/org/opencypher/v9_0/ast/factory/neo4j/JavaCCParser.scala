@@ -23,7 +23,7 @@ import org.opencypher.v9_0.util.AnonymousVariableNameGenerator
 import org.opencypher.v9_0.util.CypherExceptionFactory
 import org.opencypher.v9_0.util.InputPosition
 import org.opencypher.v9_0.util.OpenCypherExceptionFactory
-import org.neo4j.exceptions.SyntaxException
+// import org.neo4j.exceptions.SyntaxException
 
 case object JavaCCParser {
   // Triggers to fallback to parboiled parser
@@ -90,8 +90,8 @@ case object JavaCCParser {
 
       // Neo4jCypherExceptionFactory error messages includes the original query, but removes some things like comments, so verifying if we should fallback is
       // "secured" against eventual comments that include any fallback triggers.
-      case e: SyntaxException if shouldFallback(e.getMessage) =>
-        oldParser.parse(queryText, cypherExceptionFactory, offset)
+//      case e: SyntaxException if shouldFallback(e.getMessage) =>
+//        oldParser.parse(queryText, cypherExceptionFactory, offset)
     }
   }
 }
